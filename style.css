@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+header {
+  background: #00503c;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+#hero {
+  background: url("your-image.jpg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
