@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sundarbans</title>
 
+  <!-- Import fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Chakra+Petch:wght@500&display=swap" rel="stylesheet">
 
   <style>
@@ -13,7 +14,7 @@
       padding: 0;
       height: 100%;
       overflow: hidden;
-      background-color: black;
+      background-color: black; /* fallback if GIF loads slowly */
     }
 
     .hero {
@@ -22,6 +23,7 @@
       background: url('patronus.gif') center center / cover no-repeat;
     }
 
+    /* 🔹 Tiger icon at top-left */
     .logo {
       position: fixed;
       top: 15px;
@@ -31,6 +33,25 @@
       z-index: 10;
     }
 
+    /* 🔹 Contact link at top-right */
+    .contact {
+      position: fixed;
+      top: 25px;
+      right: 25px;
+      font-family: 'Chakra Petch', sans-serif;
+      color: white;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+    }
+
+    .contact:hover {
+      opacity: 0.7;
+    }
+
+    /* 🔹 Minimalist navbar (bottom center) */
     .navbar {
       position: fixed;
       bottom: 20px;
@@ -54,6 +75,7 @@
       opacity: 0.7;
     }
 
+    /* 🔹 Center text content */
     .content {
       position: absolute;
       top: 50%;
@@ -65,7 +87,7 @@
 
     .title {
       font-family: 'Amatic SC', cursive;
-      font-size: 48px;
+      font-size: 36px;
       letter-spacing: 2px;
       margin: 0;
       opacity: 1;
@@ -73,7 +95,7 @@
 
     .subtitle {
       font-family: 'Chakra Petch', sans-serif;
-      font-size: 24px;
+      font-size: 18px;
       letter-spacing: 1px;
       margin-top: 6px;
       opacity: 0;
@@ -88,16 +110,21 @@
   </style>
 </head>
 <body>
-
+  <!-- 🔹 Tiger GIF icon -->
   <img src="tiger.gif" alt="Tiger Icon" class="logo">
+
+  <!-- 🔹 Contact link -->
+  <a href="#" class="contact">CONTACT</a>
 
   <div class="hero"></div>
 
+  <!-- 🔹 Center text -->
   <div class="content">
-    <h1 class="title">Sundarbans House</h1>
-    <h2 class="subtitle">IIT Madras</h2>
+    <h1 class="title">SUNDARBANS</h1>
+    <h2 class="subtitle">IIT MADRAS</h2>
   </div>
 
+  <!-- 🔹 Bottom navigation bar -->
   <nav class="navbar">
     <a href="#">ABOUT</a>
     <a href="#">CLUBS</a>
