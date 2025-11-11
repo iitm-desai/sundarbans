@@ -2,149 +2,188 @@
 <html lang="en">
 <head>
   <link rel="icon" type="image/png" href="iitmlogo.png">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events - Sundarbans</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sundarbans House</title>
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Chakra+Petch:wght@500&display=swap" rel="stylesheet">
 
   <style>
+    /* Fade-in overlay animation */
+    @keyframes fadeOverlay {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
 
-.tiger-icon {
-  position: fixed;
-  top: 20px;
-  left: 24px;
-  width: 56px;
-  height: auto;
-  z-index: 20;
-  pointer-events: none;
-}
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: black;
+      animation: fadeOverlay 1.5s ease-out forwards;
+      z-index: 1;
+      pointer-events: none;
+    }
 
-    .contact {
+    /* Background GIF */
+    .background {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .background img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(70%);
+    }
+
+    /* Tiger icon (top-left) */
+    .tiger-icon {
+      position: fixed;
+      top: 20px;
+      left: 24px;
+      width: 56px;
+      height: auto;
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    /* Top-right tabs */
+    .contact, .academia {
       font-family: 'Chakra Petch', sans-serif;
       position: fixed;
       top: 20px;
-      right: 28px;
       z-index: 20;
       font-size: 15px;
       color: white;
       text-decoration: none;
       letter-spacing: 1px;
     }
-    .contact:hover { opacity: 0.8; }
- 
-    @keyframes fadeFromBlack {
-      from { background-color: black; }
-      to { background-color: transparent; }
-    }
+    .contact { right: 28px; }
+    .academia { right: 120px; }
 
-    body::before {
-      content: "";
+    .contact:hover, .academia:hover { opacity: 0.8; }
+
+    /* Centered heading */
+    .center-anchor {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: black;
-      animation: fadeFromBlack 1.2s ease-in-out forwards;
-      z-index: 9999;
-      pointer-events: none;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background-color: white;
-      color: black;
-      font-family: 'Chakra Petch', sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .banner {
-      position: relative;
-      width: 100%;
-      height: 40vh;
-      overflow: hidden;
-    }
-
-    .banner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(70%);
-    }
-
-    .banner h1 {
-      position: absolute;
-      top: 45%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 48px;
+      top: 40%;
+      transform: translateX(-50%);
+      z-index: 20;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      pointer-events: none;
+      width: 100%;
+    }
+
+    .center-inner {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      pointer-events: auto;
+      width: auto;
+    }
+
+    .title {
       font-family: 'Amatic SC', cursive;
-      letter-spacing: 3px;
+      font-size: 64px;
+      line-height: 0.95;
+      margin: 0;
+      letter-spacing: 6px;
+      color: white;
       text-transform: uppercase;
     }
 
-    .navbar {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      background: transparent;
-      padding: 15px 0;
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
+    .subtitle {
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 24px;
+      margin: 0;
+      letter-spacing: 1px;
+      color: white;
+      opacity: 0;
+      animation: subtitleFade 2s ease-in forwards;
+      animation-delay: 1s;
     }
 
+    @keyframes subtitleFade {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Bottom navigation */
+    .navbar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      display: flex;
+      gap: 36px;
+      align-items: center;
+      justify-content: center;
+      pointer-events: auto;
+    }
     .navbar a {
+      font-family: 'Chakra Petch', sans-serif;
       color: white;
       text-decoration: none;
-      font-size: 18px;
-      transition: color 0.3s;
+      font-size: 16px;
+      letter-spacing: 1px;
+      transition: opacity 0.2s ease;
     }
+    .navbar a:hover { opacity: 0.8; }
 
-    .navbar a:hover {
-      color: #ddd;
-    }
-
-    .content {
-      padding: 60px;
-      text-align: center;
-      font-size: 18px;
-      line-height: 1.6;
+    /* Responsive tweaks */
+    @media (max-width: 700px) {
+      .title { font-size: 40px; letter-spacing: 3px; }
+      .subtitle { font-size: 18px; }
+      .tiger-icon { width: 44px; left: 12px; top: 12px; }
+      .contact { right: 12px; top: 14px; font-size: 13px; }
+      .academia { right: 90px; top: 14px; font-size: 13px; }
+      .navbar { gap: 20px; bottom: 14px; }
+      .center-anchor { top: 38%; }
     }
   </style>
 </head>
 <body>
 
-<img src="tiger.gif" class="tiger-icon" alt="Tiger Icon">
+  <!-- Background GIF -->
+  <div class="background">
+    <img src="patronus.gif" alt="Background GIF">
+  </div>
 
-  <a href="contact.html" class="contact">Get in Touch</a>
+  <!-- Tiger icon -->
+  <img src="tiger.gif" class="tiger-icon" alt="Tiger Icon">
 
-  <div class="banner">
-    <img src="patronus.gif" alt="Banner">
-    <h1>Events</h1>
+  <!-- Top-right tabs -->
+  <a href="academia.html" class="academia">ACADEMIA</a>
+  <a href="contact.html" class="contact">GET IN TOUCH</a>
 
-    <div class="navbar">
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a href="clubs.html">CLUBS</a>
-      <a href="gallery.html">GALLERY</a>
+  <!-- Centered heading -->
+  <div class="center-anchor" aria-hidden="false">
+    <div class="center-inner">
+      <h1 class="title">Sundarbans House</h1>
+      <h2 class="subtitle">IIT Madras</h2>
     </div>
   </div>
 
-  <div class="content">
-    <p>
-      The Sundarbans Team at IIT Madras draws inspiration from the resilience and harmony of the mangrove ecosystem. 
-      Our initiatives focus on sustainability, collaboration, and innovation—just as the diverse species of the Sundarbans 
-      thrive together under challenging conditions.
-    </p>
-    <p>
-      This page is under development — stay tuned for more updates about our projects, events, and initiatives!
-    </p>
-  </div>
+  <!-- Bottom navbar -->
+  <nav class="navbar">
+    <a href="about.html">ABOUT</a>
+    <a href="clubs.html">CLUBS</a>
+    <a href="event.html">EVENTS</a>
+    <a href="gallery.html">GALLERY</a>
+  </nav>
 
 </body>
 </html>
