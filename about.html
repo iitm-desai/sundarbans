@@ -1,150 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Sundarbans</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Sundarbans</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Chakra+Petch:wght@500&display=swap" rel="stylesheet">
 
   <style>
+    /* Base page styling */
     html, body {
       margin: 0;
       padding: 0;
-      background-color: #23272A;
-      color: white;
+      background-color: white; /* clean white background */
+      color: black;
       font-family: 'Chakra Petch', sans-serif;
       min-height: 100vh;
     }
 
-    /* 🔹 Banner Section */
+    /* Banner styling */
     .banner {
-      width: 100%;
-      height: 40vh;
-      background: url('patronus.gif') center center / cover no-repeat;
       position: relative;
+      width: 100%;
+      height: 40vh; /* partial length banner */
+      overflow: hidden;
     }
 
-    .banner::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
+    .banner img {
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.4);
+      object-fit: cover;
+      filter: brightness(70%);
     }
 
-    .banner-content {
+    /* Heading over banner */
+    .banner h1 {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      text-align: center;
-      z-index: 2;
-    }
-
-    .banner h1 {
+      color: white;
+      font-size: 48px;
       font-family: 'Amatic SC', cursive;
-      font-size: 42px;
-      letter-spacing: 2px;
-      margin: 0;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
-    /* 🔹 Navbar inside banner */
+    /* Navbar under heading */
     .navbar {
-      margin-top: 20px;
       display: flex;
       justify-content: center;
       gap: 40px;
-      z-index: 2;
-      position: relative;
+      background: transparent;
+      padding: 15px 0;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
     }
 
     .navbar a {
-      text-decoration: none;
       color: white;
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 14px;
-      letter-spacing: 1px;
-      transition: opacity 0.3s ease;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
     }
 
     .navbar a:hover {
-      opacity: 0.7;
+      color: #ddd;
     }
 
-    /* 🔹 Top elements */
-    .logo {
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      width: 60px;
-      height: auto;
-      z-index: 10;
-    }
-
-    .contact {
-      position: fixed;
-      top: 25px;
-      right: 25px;
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      letter-spacing: 1px;
-      transition: opacity 0.3s ease;
-      z-index: 10;
-    }
-
-    .contact:hover {
-      opacity: 0.7;
-    }
-
-    /* 🔹 Main content area */
+    /* Content section */
     .content {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 20px;
-      line-height: 1.8;
-      font-size: 16px;
-      opacity: 0.95;
+      padding: 60px;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
-  <!-- 🔹 Tiger icon -->
-  <img src="tiger.gif" alt="Tiger Icon" class="logo">
 
-  <!-- 🔹 Contact -->
-  <a href="contact.html" class="contact">CONTACT</a>
-
-  <!-- 🔹 Banner -->
+  <!-- Banner with heading -->
   <div class="banner">
-    <div class="banner-content">
-      <h1>ABOUT</h1>
+    <img src="patronus.gif" alt="Banner">
+    <h1>About</h1>
 
-      <!-- Navbar inside banner -->
-      <nav class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="clubs.html">CLUBS</a>
-        <a href="events.html">EVENTS</a>
-        <a href="gallery.html">GALLERY</a>
-      </nav>
+    <!-- Navbar below heading -->
+    <div class="navbar">
+      <a href="index.html">HOME</a>
+      <a href="clubs.html">CLUBS</a>
+      <a href="events.html">EVENTS</a>
+      <a href="gallery.html">GALLERY</a>
     </div>
   </div>
 
-  <!-- 🔹 Main content -->
+  <!-- Content -->
   <div class="content">
     <p>
-      The Sundarbans club at IIT Madras draws inspiration from the rich biodiversity
-      and resilience of the mangrove forests. Our mission is to foster collaboration,
-      creativity, and curiosity among students through interdisciplinary activities.
+      The Sundarbans Team at IIT Madras draws inspiration from the resilience and harmony of the mangrove ecosystem. 
+      Our initiatives focus on sustainability, collaboration, and innovation—just as the diverse species of the Sundarbans 
+      thrive together under challenging conditions.
     </p>
     <p>
-      We aim to reflect the Sundarbans spirit — thriving in diversity, balancing strength
-      and adaptability, and sustaining growth through unity.
+      This page is under development — stay tuned for more updates about our projects, events, and initiatives!
     </p>
   </div>
+
 </body>
 </html>
