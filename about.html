@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Sundarbans</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Chakra+Petch:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #0d0d38;
+      color: white;
+      font-family: 'Chakra Petch', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* 🔹 Top Banner Section */
+    .banner {
+      width: 100%;
+      height: 40vh;
+      background: url('patronus.gif') center center / cover no-repeat;
+      position: relative;
+    }
+
+    /* Dark overlay on banner for text contrast */
+    .banner::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .banner-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+    }
+
+    .banner h1 {
+      font-family: 'Amatic SC', cursive;
+      font-size: 42px;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+
+    /* 🔹 Top elements */
+    .logo {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      width: 60px;
+      height: auto;
+      z-index: 10;
+    }
+
+    .contact {
+      position: fixed;
+      top: 25px;
+      right: 25px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+    }
+
+    .contact:hover {
+      opacity: 0.7;
+    }
+
+    /* 🔹 Main content area */
+    .content {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+      line-height: 1.8;
+      font-size: 16px;
+      opacity: 0.95;
+    }
+
+    /* 🔹 Navbar (bottom center) */
+    .navbar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 40px;
+      z-index: 10;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: opacity 0.3s ease;
+    }
+
+    .navbar a:hover {
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🔹 Tiger icon -->
+  <img src="tiger.gif" alt="Tiger Icon" class="logo">
+
+  <!-- 🔹 Contact -->
+  <a href="contact.html" class="contact">CONTACT</a>
+
+  <!-- 🔹 Banner Section -->
+  <div class="banner">
+    <div class="banner-content">
+      <h1>ABOUT</h1>
+    </div>
+  </div>
+
+  <!-- 🔹 Main Content -->
+  <div class="content">
+    <p>
+      The Sundarbans club at IIT Madras draws inspiration from the rich biodiversity
+      and resilience of the mangrove forests. Our mission is to foster collaboration,
+      creativity, and curiosity among students through interdisciplinary activities.
+    </p>
+    <p>
+      We aim to reflect the Sundarbans spirit — thriving in diversity, balancing strength
+      and adaptability, and sustaining growth through unity.
+    </p>
+  </div>
+
+  <!-- 🔹 Navbar -->
+  <nav class="navbar">
+    <a href="about.html">ABOUT</a>
+    <a href="clubs.html">CLUBS</a>
+    <a href="events.html">EVENTS</a>
+    <a href="gallery.html">GALLERY</a>
+  </nav>
+</body>
+</html>
