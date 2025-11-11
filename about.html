@@ -18,7 +18,7 @@
       min-height: 100vh;
     }
 
-    /* 🔹 Top Banner Section */
+    /* 🔹 Banner Section */
     .banner {
       width: 100%;
       height: 40vh;
@@ -26,7 +26,6 @@
       position: relative;
     }
 
-    /* Dark overlay on banner for text contrast */
     .banner::after {
       content: "";
       position: absolute;
@@ -51,6 +50,29 @@
       font-size: 42px;
       letter-spacing: 2px;
       margin: 0;
+    }
+
+    /* 🔹 Navbar inside banner */
+    .navbar {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-family: 'Chakra Petch', sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: opacity 0.3s ease;
+    }
+
+    .navbar a:hover {
+      opacity: 0.7;
     }
 
     /* 🔹 Top elements */
@@ -88,30 +110,6 @@
       font-size: 16px;
       opacity: 0.95;
     }
-
-    /* 🔹 Navbar (bottom center) */
-    .navbar {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 40px;
-      z-index: 10;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: white;
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 14px;
-      letter-spacing: 1px;
-      transition: opacity 0.3s ease;
-    }
-
-    .navbar a:hover {
-      opacity: 0.7;
-    }
   </style>
 </head>
 <body>
@@ -121,14 +119,22 @@
   <!-- 🔹 Contact -->
   <a href="contact.html" class="contact">CONTACT</a>
 
-  <!-- 🔹 Banner Section -->
+  <!-- 🔹 Banner -->
   <div class="banner">
     <div class="banner-content">
       <h1>ABOUT</h1>
+
+      <!-- Navbar inside banner -->
+      <nav class="navbar">
+        <a href="index.html">HOME</a>
+        <a href="clubs.html">CLUBS</a>
+        <a href="events.html">EVENTS</a>
+        <a href="gallery.html">GALLERY</a>
+      </nav>
     </div>
   </div>
 
-  <!-- 🔹 Main Content -->
+  <!-- 🔹 Main content -->
   <div class="content">
     <p>
       The Sundarbans club at IIT Madras draws inspiration from the rich biodiversity
@@ -140,13 +146,5 @@
       and adaptability, and sustaining growth through unity.
     </p>
   </div>
-
-  <!-- 🔹 Navbar -->
-  <nav class="navbar">
-    <a href="about.html">ABOUT</a>
-    <a href="clubs.html">CLUBS</a>
-    <a href="events.html">EVENTS</a>
-    <a href="gallery.html">GALLERY</a>
-  </nav>
 </body>
 </html>
