@@ -1,127 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sundarbans House</title>
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Chakra+Petch:wght@500&display=swap" rel="stylesheet">
 
   <style>
+    /* Fade-in overlay animation */
+    @keyframes fadeFromBlack {
+      from { background-color: black; }
+      to { background-color: transparent; }
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      animation: fadeFromBlack 1.2s ease-in-out forwards;
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    /* Base page styling */
     html, body {
       margin: 0;
       padding: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Chakra Petch', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Full-screen GIF background */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 100%;
       overflow: hidden;
-      background-color: black;
+      z-index: -1;
     }
 
-    .hero {
+    .background img {
       width: 100%;
-      height: 100vh;
-      background: url('patronus.gif') center center / cover no-repeat;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(70%);
     }
 
-    .logo {
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      width: 60px;
-      height: auto;
-      z-index: 10;
-    }
-
-    .contact {
-      position: fixed;
-      top: 25px;
-      right: 25px;
-      font-family: 'Chakra Petch', sans-serif;
-      color: white;
-      font-size: 14px;
-      letter-spacing: 1px;
-      text-decoration: none;
-      transition: opacity 0.3s ease;
-      z-index: 10;
-    }
-
-    .contact:hover {
-      opacity: 0.7;
-    }
-
-    .navbar {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 40px;
-      z-index: 10;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: white;
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 14px;
-      letter-spacing: 1px;
-      transition: opacity 0.3s ease;
-    }
-
-    .navbar a:hover {
-      opacity: 0.7;
-    }
-
-    .content {
+    /* Text styling */
+    .center-text {
       position: absolute;
-      top: 50%;
+      top: 40%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
       color: white;
     }
 
-    .title {
+    .center-text h1 {
       font-family: 'Amatic SC', cursive;
-      font-size: 48px;
-      letter-spacing: 2px;
+      font-size: 64px;
+      letter-spacing: 5px;
       margin: 0;
-      opacity: 1;
+      animation: fadeInText 1s ease-in-out forwards;
     }
 
-    .subtitle {
+    .center-text h2 {
       font-family: 'Chakra Petch', sans-serif;
       font-size: 24px;
-      letter-spacing: 1px;
-      margin-top: 6px;
+      margin-top: 10px;
       opacity: 0;
-      animation: fadeIn 2s ease-in forwards;
-      animation-delay: 1.5s;
+      animation: fadeInSub 1s ease-in-out forwards;
+      animation-delay: 1s;
     }
 
-    @keyframes fadeIn {
+    @keyframes fadeInText {
+      from { opacity: 0; transform: translate(-50%, -60%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+
+    @keyframes fadeInSub {
       from { opacity: 0; }
       to { opacity: 1; }
+    }
+
+    /* Top right contact tab */
+    .contact {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 18px;
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s;
+    }
+
+    .contact:hover {
+      color: #ddd;
+    }
+
+    /* Bottom navigation */
+    .navbar {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 40px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ddd;
+    }
+
+    /* Tiny tiger icon */
+    .tiger-icon {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      width: 50px;
+      height: auto;
     }
   </style>
 </head>
 <body>
-  
-  <img src="tiger.gif" alt="Tiger Icon" class="logo">
 
-  <a href="#" class="contact">Get in Touch</a>
-
-  <div class="hero"></div>
-
-  <div class="content">
-    <h1 class="title">Sundarbans House</h1>
-    <h2 class="subtitle">IIT Madras</h2>
+  <!-- Fullscreen background -->
+  <div class="background">
+    <img src="patronus.gif" alt="Background GIF">
   </div>
 
-  <nav class="navbar">
+  <!-- Tiger icon -->
+  <img src="tiger.gif" alt="Tiger Icon" class="tiger-icon">
+
+  <!-- Center text -->
+  <div class="center-text">
+    <h1>Sundarbans House</h1>
+    <h2>IIT Madras</h2>
+  </div>
+
+  <!-- Contact tab -->
+  <a href="contact.html" class="contact">Get in Touch</a>
+
+  <!-- Bottom nav bar -->
+  <div class="navbar">
     <a href="about.html">ABOUT</a>
-    <a href="#">CLUBS</a>
-    <a href="#">EVENTS</a>
-    <a href="#">GALLERY</a>
-  </nav>
+    <a href="clubs.html">CLUBS</a>
+    <a href="events.html">EVENTS</a>
+    <a href="gallery.html">GALLERY</a>
+  </div>
+
 </body>
 </html>
