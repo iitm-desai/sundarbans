@@ -74,15 +74,14 @@
     }
 
     /* Nav bar (below heading) */
-    .navbar {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      background: transparent;
-      padding: 15px 0;
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
+.navbar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  padding: 12px 0;
+  background: transparent; /* ← removed the dark background */
     }
 
     .navbar a {
